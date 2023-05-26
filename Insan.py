@@ -1,6 +1,6 @@
 
 class Insan():
-    def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk) -> None:
+    def __init__(self, tc_no:str, ad:str, soyad:str, yas:int, cinsiyet:str, uyruk:str) -> None:
         self._tc_no = tc_no
         self._ad = ad
         self._soyad = soyad
