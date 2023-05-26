@@ -6,6 +6,19 @@ class Issiz(Insan):
         self._tecrube = {"maviyaka" : maviYaka, "beyazyaka" : beyazYaka, "yonetici" : yonetici}
         self.statu = self.statu_bul()
 
+    def tecrube_ekle(self, statu:str, yil:int) -> None:
+        try:
+            self._tecrube[statu] += yil
+            self.statu = self.statu_bul()
+        except KeyError:
+            print("Hatalı statü girişi yapıldı. Lütfen statüyü kontrol ediniz.")
+
+    def tecrube_al(self, statu:str) -> float:
+        try:
+            return self._tecrube[statu]
+        except KeyError:
+            print("Hatalı statü girişi yapıldı. Lütfen statüyü kontrol ediniz.")
+
     def statu_bul(self) -> str:
         if self._tecrube["maviyaka"] * 0.2 > self._tecrube["beyazyaka"] * 0.35 and self._tecrube["maviyaka"] * 0.2 > self._tecrube["yonetici"] * 0.45:
             return "maviyaka"
