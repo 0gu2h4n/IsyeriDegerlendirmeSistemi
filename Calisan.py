@@ -34,7 +34,7 @@ class Calisan(Insan):
     def zam_hakki(self) -> float:
         if self._tecrube < 24:
             return self._maas * 0
-        elif self._tecrube >= 24 and self._tecrube < 48 and sel._maas < 15000:
+        elif self._tecrube >= 24 and self._tecrube < 48 and self._maas < 15000:
             return self._maas * (self._maas % self._tecrube)
         elif self._tecrube >= 48 and self._maas < 25000:
             return self._maas * (self._maas % self._tecrube) / 2
