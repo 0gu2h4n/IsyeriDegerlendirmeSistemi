@@ -5,4 +5,11 @@ class Issiz(Insan):
         super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk)
         self._tecrube = {"maviyaka" : maviYaka, "beyazyaka" : beyazYaka, "yonetici" : yonetici}
 
+    def statu_bul(self) -> str:
+        if self._tecrube["maviyaka"] * 0.2 > self._tecrube["beyazyaka"] * 0.35 and self._tecrube["maviyaka"] * 0.2 > self._tecrube["yonetici"] * 0.45:
+            return "maviyaka"
+        elif self._tecrube["beyazyaka"] * 0.35 > self._tecrube["maviyaka"] * 0.2 and self._tecrube["beyazyaka"] * 0.35 > self._tecrube["yonetici"] * 0.45:
+            return "beyazyaka"
+        else:
+            return "yonetici"
 
