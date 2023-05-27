@@ -18,6 +18,12 @@ def main():
     print(issiz2)
     print(issiz3)
 
+    calisan1 = Calisan("10006", "Arda", "Dağ", 21, "Kadın", "Türk", "Teknoloji", 12, 9000)
+    calisan2 = Calisan("10007", "Sevda", "Mari", 29, "Kadın", "Türk", "Diğer", 29, 14000)
+    calisan3 = Calisan("10008", "Derin", "Üreten", 44, "Erkek", "Türk", "Muhasebe", 51, 22000)
+    print(calisan1)
+    print(calisan2)
+    print(calisan3)
 
 
 if __name__ == "__main__": main()  
