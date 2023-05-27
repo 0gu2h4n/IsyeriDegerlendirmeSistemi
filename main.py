@@ -57,5 +57,7 @@ def main():
     df = pd.DataFrame(data, columns=["tip", "tc_no", "ad", "soyad", "yas", "cinsiyet", "uyruk", "sektor", "tecrube", "maas", "yipranma", "prim", "yenimaas"])
     print(df.groupby("tip").agg(tecrubeOrtalama = pd.NamedAgg(column='tecrube', aggfunc='mean'), yenimaasOrtalama = pd.NamedAgg(column='yenimaas', aggfunc='mean')))
 
+    print("\nMaaşı 15000 TL üzerinde olan kişi sayısı:", df[df.maas > 15000].count()["maas"])
+
 
 if __name__ == "__main__": main()  
