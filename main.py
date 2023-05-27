@@ -75,6 +75,13 @@ def main():
                 except ValueError: print("Geçerli bir yaş giriniz.")
             _cinsiyet = input("Cinsiyet: ")
             _uyruk = input("Uyruk: ")
+            _sektor = input("Sektör: ")
+            while True:
+                try:
+                    _tecrube = int(input("Tecrübe (Ay): "))
+                    if _tecrube < 0: raise ValueError
+                    break
+                except ValueError: print("Geçerli bir tecrübe değeri giriniz.")
             while True:
                 try:
                     _maas = int(input("Maaş: "))
@@ -83,18 +90,9 @@ def main():
                 except ValueError: print("Geçerli bir maaş giriniz.")
             while True:
                 try:
-                    _maviyaka = int(input("Mavi Yaka Çalışma Geçmişi (Yıl): "))
-                    if _maviyaka < 0: raise ValueError
+                    _calisan = Calisan(_tcno, _ad, _soyad, _yas, _cinsiyet, _uyruk, _sektor, _tecrube, _maas)
                     break
-                except ValueError: print("Geçerli bir mavi yaka çalışma geçmişi giriniz.")
-            while True:
-                try:
-                    _beyazyaka = int(input("Beyaz Yaka Çalışma Geçmişi (Yıl): "))
-                    if _beyazyaka < 0: raise ValueError
-                    break
-                except ValueError: print("Geçerli bir beyaz yaka çalışma geçmişi giriniz.")
-            _calisan = Calisan(_tcno, _ad, _soyad, _yas, _cinsiyet, _uyruk, _maas, _maviyaka, _beyazyaka)
+                except Exception as e: print(e)
             kayitlar.append(_calisan)
-
 
 if __name__ == "__main__": main()  
