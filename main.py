@@ -35,7 +35,7 @@ def main():
 
     beyazyaka1 = BeyazYaka("10012", "Güney", "Saygı", 21, "Erkek", "Türk", "Teknoloji", 13, 11000, 250)
     beyazyaka2 = BeyazYaka("10013", "Volkan", "Karahan", 33, "Erkek", "Türk", "İnşaat", 21, 13000, 1200)
-    beyazyaka3 = BeyazYaka("10014", "Jale", "Türkmen", 34, "Kadın", "Türk", "Diğer", 31, 29000, 3650)
+    beyazyaka3 = BeyazYaka("10014", "Jale", "Türkmen", 37, "Kadın", "Türk", "Diğer", 40, 29000, 3650)
     print(beyazyaka1)
     print(beyazyaka2)
     print(beyazyaka3)
@@ -60,5 +60,7 @@ def main():
     print("\nMaaşı 15000 TL üzerinde olan kişi sayısı:", df[df.maas > 15000].count()["maas"])
 
     print("\nYeni maaşa göre sıralanmış liste:\n",df.sort_values(by=["yenimaas"], ascending=True))
+
+    print("\nBeyaz yaka çalışanlar arasında tecrübesi 3 yıldan fazla olanlar:\n", df[(df.tip == "Beyaz Yaka") & (df.tecrube > 3)])
 
 if __name__ == "__main__": main()  
