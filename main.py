@@ -55,9 +55,10 @@ def main():
             "yenimaas": [calisan1.yenimaas(), calisan2.yenimaas(), calisan3.yenimaas(), maviyaka1.yenimaas(), maviyaka2.yenimaas(), maviyaka3.yenimaas(), beyazyaka1.yenimaas(), beyazyaka2.yenimaas(), beyazyaka3.yenimaas()]}
 
     df = pd.DataFrame(data, columns=["tip", "tc_no", "ad", "soyad", "yas", "cinsiyet", "uyruk", "sektor", "tecrube", "maas", "yipranma", "prim", "yenimaas"])
-    print(df.groupby("tip").agg(tecrubeOrtalama = pd.NamedAgg(column='tecrube', aggfunc='mean'), yenimaasOrtalama = pd.NamedAgg(column='yenimaas', aggfunc='mean')))
+    print("\nÇalışan türlerinin tecrübe ve yeni maaş ortalamaları:\n", df.groupby("tip").agg(tecrubeOrtalama = pd.NamedAgg(column='tecrube', aggfunc='mean'), yenimaasOrtalama = pd.NamedAgg(column='yenimaas', aggfunc='mean')))
 
     print("\nMaaşı 15000 TL üzerinde olan kişi sayısı:", df[df.maas > 15000].count()["maas"])
 
+    print("\nYeni maaşa göre sıralanmış liste:\n",df.sort_values(by=["yenimaas"], ascending=True))
 
 if __name__ == "__main__": main()  
