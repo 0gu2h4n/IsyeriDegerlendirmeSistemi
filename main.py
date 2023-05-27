@@ -100,5 +100,49 @@ def main():
                     if degisiklik == "0": break
                     else: _calisan.sektor_yap(degisiklik)
             kayitlar.append(_calisan)
+        elif secim == "4":
+            _tcno = input("TC Kimlik No: ")
+            _ad = input("Ad: ")
+            _soyad = input("Soyad: ")
+            while True:
+                try:
+                    _yas = int(input("Yaş: "))
+                    if _yas < 0: raise ValueError
+                    break
+                except ValueError: print("Geçerli bir yaş giriniz.")
+            _cinsiyet = input("Cinsiyet: ")
+            _uyruk = input("Uyruk: ")
+            _sektor = input("Sektör: ")
+            while True:
+                try:
+                    _tecrube = int(input("Tecrübe (Ay): "))
+                    if _tecrube < 0: raise ValueError
+                    break
+                except ValueError: print("Geçerli bir tecrübe değeri giriniz.")
+            while True:
+                try:
+                    _maas = int(input("Maaş: "))
+                    if _maas < 0: raise ValueError
+                    break
+                except ValueError: print("Geçerli bir maaş giriniz.")
+            while True:
+                try:
+                    _prim = int(input("Prim: "))
+                    if _prim < 0: raise ValueError
+                    break
+                except ValueError: print("Geçerli bir prim giriniz.")
+            while True:
+                try:
+                    _beyazyaka = BeyazYaka(_tcno, _ad, _soyad, _yas, _cinsiyet, _uyruk, _sektor, _tecrube, _maas, _prim)
+                    break
+                except Exception as e:
+                    print(e)
+                    _beyazyaka = BeyazYaka(_tcno, _ad, _soyad, _yas, _cinsiyet, _uyruk, "Diğer", _tecrube, _maas, _prim)
+                    print("Sektör bilgisi 'Diğer' olarak kaydedildi.")
+                    degisiklik = input("Sektör bilgisi değişikliği için sektör bilgisini giriniz (Çıkmak için 0): ")
+                    if degisiklik == "0": break
+                    else: _beyazyaka.sektor_yap(degisiklik)
+            kayitlar.append(_beyazyaka)
+            
 
 if __name__ == "__main__": main()  
