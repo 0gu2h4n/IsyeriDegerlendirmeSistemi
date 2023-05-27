@@ -25,6 +25,12 @@ def main():
     print(calisan2)
     print(calisan3)
 
+    maviyaka1 = MaviYaka("10009", "Durmuş", "Deniz", 25, "Erkek", "Türk", "Teknoloji", 5, 10000, 0.79)
+    maviyaka2 = MaviYaka("10010", "Fasıl", "Kuru", 19, "Erkek", "Türk", "İnşaat", 11, 9000, 0.21)
+    maviyaka3 = MaviYaka("10011", "Gülbahar", "Tandoğan", 34, "Kadın", "Türk", "Diğer", 60, 29000, 0.54)
+    print(maviyaka1)
+    print(maviyaka2)
+    print(maviyaka3)
 
 
 if __name__ == "__main__": main()  
