@@ -32,5 +32,12 @@ def main():
     print(maviyaka2)
     print(maviyaka3)
 
+    beyazyaka1 = BeyazYaka("10012", "Güney", "Saygı", 21, "Erkek", "Türk", "Teknoloji", 13, 11000, 250)
+    beyazyaka2 = BeyazYaka("10013", "Volkan", "Karahan", 33, "Erkek", "Türk", "İnşaat", 21, 13000, 1200)
+    beyazyaka3 = BeyazYaka("10014", "Jale", "Türkmen", 34, "Kadın", "Türk", "Diğer", 31, 29000, 3650)
+    print(beyazyaka1)
+    print(beyazyaka2)
+    print(beyazyaka3)
+
 
 if __name__ == "__main__": main()  
