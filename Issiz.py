@@ -30,4 +30,4 @@ class Issiz(Insan):
             return "Mavi Yaka"
         
     def __str__(self) -> str:
-        return f"Ad: {self.__ad}\nSoyad: {self.__soyad}\nStatü: {self.statu_bul()}\n"
+        return f"Ad: {self._Insan__ad}\nSoyad: {self._Insan__soyad}\nStatü: {self.statu_bul()}\n"
