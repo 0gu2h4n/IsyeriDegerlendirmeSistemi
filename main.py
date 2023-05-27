@@ -92,7 +92,13 @@ def main():
                 try:
                     _calisan = Calisan(_tcno, _ad, _soyad, _yas, _cinsiyet, _uyruk, _sektor, _tecrube, _maas)
                     break
-                except Exception as e: print(e)
+                except Exception as e: 
+                    print(e)
+                    _calisan = Calisan(_tcno, _ad, _soyad, _yas, _cinsiyet, _uyruk, "Diğer", _tecrube, _maas)
+                    print("Sektör bilgisi 'Diğer' olarak kaydedildi.")
+                    degisiklik = input("Sektör bilgisi değişikliği için sektör bilgisini giriniz (Çıkmak için 0): ")
+                    if degisiklik == "0": break
+                    else: _calisan.sektor_yap(degisiklik)
             kayitlar.append(_calisan)
 
 if __name__ == "__main__": main()  
