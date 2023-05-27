@@ -65,5 +65,7 @@ def main():
 
     print("\nYeni maaşı 10000 TL üzerinde olanlar:\n", df[df.yenimaas > 10000].iloc[1:4, [1, 12]]) # 2 ve 5 dahil
 
+    df2 = df[["ad", "soyad", "sektor", "yenimaas"]]
+    print("\nYeni Liste:\n", df2)
  
 if __name__ == "__main__": main()  
