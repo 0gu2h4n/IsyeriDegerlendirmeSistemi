@@ -3,12 +3,13 @@ from Issiz import Issiz
 from Calisan import Calisan
 from MaviYaka import MaviYaka
 from BeyazYaka import BeyazYaka
+import pandas as pd
 
 def main():
+    kayitlar = []
     while True:
         print("\n***Çalışan Bilgi Sistemi***\n")
-        kayitlar = []
-        secim = input("Kayıt türü seçiniz:\n1-İnsan\n2-İşsiz\n3-Çalışan\n4-Beyaz Yaka\n5-Mavi Yaka\n0-Çıkış\nSeçiminiz: ")
+        secim = input("Kayıt türü seçiniz:\n1-İnsan\n2-İşsiz\n3-Çalışan\n4-Beyaz Yaka\n5-Mavi Yaka\n0-Menü Geç\nSeçiminiz: ")
         if secim == "1":
             _tcno = input("TC Kimlik No: ")
             _ad = input("Ad: ")
@@ -186,5 +187,10 @@ def main():
                     if degisiklik == "0": break
                     else: _maviyaka.sektor_yap(degisiklik)
             kayitlar.append(_maviyaka)
+        elif secim == "0":
+            print("Sonraki adıma geçiliyor yapılıyor...")
+            break
+        else:
+            print("Geçerli bir seçim yapınız.")
 
 if __name__ == "__main__": main()  
