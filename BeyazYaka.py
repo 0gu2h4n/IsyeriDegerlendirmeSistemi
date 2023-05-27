@@ -5,10 +5,10 @@ class BeyazYaka(Calisan):
         super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk, sektor, tecrube, maas)
         self.__prim = prim
 
-    def prim_yap(self, prim:int) -> None:
+    def set_prim(self, prim:int) -> None:
         self.__prim = prim
 
-    def prim_al(self) -> int:
+    def get_prim(self) -> int:
         return self.__prim
     
     def zam_hakki(self) -> float:

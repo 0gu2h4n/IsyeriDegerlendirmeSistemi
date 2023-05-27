@@ -10,25 +10,25 @@ class Calisan(Insan):
         self._Calisan__tecrube = tecrube
         self._Calisan__maas = maas
 
-    def sektor_yap(self, sektor:str) -> None:
+    def set_sektor(self, sektor:str) -> None:
         if sektor in _sektorler:
             self.__sektor = sektor
         else:
             raise Exception("Sektör bilgisi hatalı.")
         
-    def sektor_al(self) -> str:
+    def get_sektor(self) -> str:
         return self.__sektor
 
-    def tecrube_yap(self, tecrube:int) -> None:
+    def set_tecrube(self, tecrube:int) -> None:
         self._Calisan__tecrube = tecrube
 
-    def tecrube_al(self) -> int:
+    def get_tecrube(self) -> int:
         return self._Calisan__tecrube
 
-    def maas_yap(self, maas:float) -> None:
+    def set_maas(self, maas:float) -> None:
         self._Calisan__maas = maas
 
-    def maas_al(self) -> float:
+    def get_maas(self) -> float:
         return self._Calisan__maas
     
     def zam_hakki(self) -> float:

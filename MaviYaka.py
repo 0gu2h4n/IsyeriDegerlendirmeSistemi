@@ -5,10 +5,10 @@ class MaviYaka(Calisan):
         super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk, sektor, tecrube, maas)
         self.__yipranma = yipranma
 
-    def yipranma_yap(self, yipranma:float) -> None:
+    def set_yipranma(self, yipranma:float) -> None:
         self.__yipranma = yipranma
 
-    def yipranma_al(self) -> float:
+    def get_yipranma(self) -> float:
         return self.__yipranma
     
     def zam_hakki(self) -> float:
