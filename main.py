@@ -63,4 +63,7 @@ def main():
 
     print("\nBeyaz yaka çalışanlar arasında tecrübesi 3 yıldan fazla olanlar:\n", df[(df.tip == "Beyaz Yaka") & (df.tecrube > 3)])
 
+    print("\nYeni maaşı 10000 TL üzerinde olanlar:\n", df[df.yenimaas > 10000].iloc[1:4, [1, 12]]) # 2 ve 5 dahil
+
+ 
 if __name__ == "__main__": main()  
