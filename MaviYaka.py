@@ -15,8 +15,8 @@ class MaviYaka(Calisan):
         if self._tecrube < 24:
             return self._yipranma * 10
         elif self._tecrube >= 24 and self._tecrube < 48 and self._maas < 15000:
-            return self._maas * (self._maas % self._tecrube) / 2 + self._yipranma * 10
+            return (self._maas % self._tecrube) / 2 + self._yipranma * 10
         elif self._tecrube >= 48 and self._maas < 25000:
-            return self._maas * (self._maas % self._tecrube) / 3 + self._yipranma * 10
+            return (self._maas % self._tecrube) / 3 + self._yipranma * 10
         else:
-            return self._maas * 0
+            return 0

@@ -15,8 +15,8 @@ class BeyazYaka(Calisan):
         if self._tecrube < 24:
             return self._prim
         elif self._tecrube >= 24 and self._tecrube < 48 and self._maas < 15000:
-            return self._maas * (self._maas % self._tecrube) * 5 + self._prim 
+            return (self._maas % self._tecrube) * 5 + self._prim 
         elif self._tecrube >= 48 and self._maas < 25000:
-            return self._maas * (self._maas % self._tecrube) * 4 + self._prim
+            return (self._maas % self._tecrube) * 4 + self._prim
         else:
-            return self._maas * 0
+            return 0

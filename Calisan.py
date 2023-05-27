@@ -33,13 +33,13 @@ class Calisan(Insan):
     
     def zam_hakki(self) -> float:
         if self._tecrube < 24:
-            return self._maas * 0
+            return 0
         elif self._tecrube >= 24 and self._tecrube < 48 and self._maas < 15000:
-            return self._maas * (self._maas % self._tecrube)
+            return (self._maas % self._tecrube)
         elif self._tecrube >= 48 and self._maas < 25000:
-            return self._maas * (self._maas % self._tecrube) / 2
+            return (self._maas % self._tecrube) / 2
         else:
-            return self._maas * 0
+            return 0
         
     def __str__(self) -> str:
-        return f"Ad: {self._ad}\nSoyad: {self._soyad}\nTecrübe: {self._tecrube}\nMaaş: {self._maas + self.zam_hakki()}\n"
+        return f"Ad: {self._ad}\nSoyad: {self._soyad}\nTecrübe: {self._tecrube}\nYeni Maaş: {self._maas * (1 + self.zam_hakki() / 100) :.2f}\n"
