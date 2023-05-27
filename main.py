@@ -13,12 +13,18 @@ def main():
             _tcno = input("TC Kimlik No: ")
             _ad = input("Ad: ")
             _soyad = input("Soyad: ")
-            _yas = int(input("Yaş: "))
+            while True:
+                try:
+                    _yas = int(input("Yaş: "))
+                    if _yas < 0:
+                        raise ValueError
+                    break
+                except ValueError:
+                    print("Geçerli bir yaş giriniz.")
             _cinsiyet = input("Cinsiyet: ")
             _uyruk = input("Uyruk: ")
-            insan = Insan(_tcno, _ad, _soyad, _yas, _cinsiyet, _uyruk)
-            kayitlar.append(insan)
-
+            _insan = Insan(_tcno, _ad, _soyad, _yas, _cinsiyet, _uyruk)
+            kayitlar.append(_insan)
 
 
 if __name__ == "__main__": main()  
