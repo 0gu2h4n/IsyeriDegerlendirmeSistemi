@@ -1,25 +1,25 @@
 
 class Insan():
     def __init__(self, tc_no:str, ad:str, soyad:str, yas:int, cinsiyet:str, uyruk:str) -> None:
-        self._tc_no = tc_no
-        self._ad = ad
-        self._soyad = soyad
-        self._yas = yas
-        self._cinsiyet = cinsiyet
-        self._uyruk = uyruk
+        self.__tc_no = tc_no
+        self.__ad = ad
+        self.__soyad = soyad
+        self.__yas = yas
+        self.__cinsiyet = cinsiyet
+        self.__uyruk = uyruk
 
-    def get_tc_no(self): return self._tc_no
-    def set_tc_no(self, tc_no): self._tc_no = tc_no
-    def get_ad(self): return self._ad
-    def set_ad(self, ad): self._ad = ad
-    def get_soyad(self): return self._soyad
-    def set_soyad(self, soyad): self._soyad = soyad
-    def get_yas(self): return self._yas
-    def set_yas(self, yas): self._yas = yas
-    def get_cinsiyet(self): return self._cinsiyet
-    def set_cinsiyet(self, cinsiyet): self._cinsiyet = cinsiyet
-    def get_uyruk(self): return self._uyruk
-    def set_uyruk(self, uyruk): self._uyruk = uyruk
+    def get_tc_no(self): return self.__tc_no
+    def set_tc_no(self, tc_no): self.__tc_no = tc_no
+    def get_ad(self): return self.__ad
+    def set_ad(self, ad): self.__ad = ad
+    def get_soyad(self): return self.__soyad
+    def set_soyad(self, soyad): self.__soyad = soyad
+    def get_yas(self): return self.__yas
+    def set_yas(self, yas): self.__yas = yas
+    def get_cinsiyet(self): return self.__cinsiyet
+    def set_cinsiyet(self, cinsiyet): self.__cinsiyet = cinsiyet
+    def get_uyruk(self): return self.__uyruk
+    def set_uyruk(self, uyruk): self.__uyruk = uyruk
 
     def __str__(self) -> str:
-        return f"TC No: {self._tc_no}\nAd: {self._ad}\nSoyad: {self._soyad}\nYaş: {self._yas}\nCinsiyet: {self._cinsiyet}\nUyruk: {self._uyruk}"
+        return f"TC No: {self.__tc_no}\nAd: {self.__ad}\nSoyad: {self.__soyad}\nYaş: {self.__yas}\nCinsiyet: {self.__cinsiyet}\nUyruk: {self.__uyruk}"
