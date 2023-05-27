@@ -40,7 +40,7 @@ def main():
     print(beyazyaka2)
     print(beyazyaka3)
 
-    data = {"Nesne": ["Çalışan", "Çalışan", "Çalışan", "Mavi Yaka", "Mavi Yaka", "Mavi Yaka", "Beyaz Yaka", "Beyaz Yaka", "Beyaz Yaka"],
+    data = {"tip": ["Çalışan", "Çalışan", "Çalışan", "Mavi Yaka", "Mavi Yaka", "Mavi Yaka", "Beyaz Yaka", "Beyaz Yaka", "Beyaz Yaka"],
             "tc_no": [calisan1.get_tc_no(), calisan2.get_tc_no(), calisan3.get_tc_no(), maviyaka1.get_tc_no(), maviyaka2.get_tc_no(), maviyaka3.get_tc_no(), beyazyaka1.get_tc_no(), beyazyaka2.get_tc_no(), beyazyaka3.get_tc_no()],
             "ad": [calisan1.get_ad(), calisan2.get_ad(), calisan3.get_ad(), maviyaka1.get_ad(), maviyaka2.get_ad(), maviyaka3.get_ad(), beyazyaka1.get_ad(), beyazyaka2.get_ad(), beyazyaka3.get_ad()],
             "soyad": [calisan1.get_soyad(), calisan2.get_soyad(), calisan3.get_soyad(), maviyaka1.get_soyad(), maviyaka2.get_soyad(), maviyaka3.get_soyad(), beyazyaka1.get_soyad(), beyazyaka2.get_soyad(), beyazyaka3.get_soyad()],
@@ -54,7 +54,8 @@ def main():
             "prim": [0, 0, 0, 0, 0, 0, beyazyaka1.get_prim(), beyazyaka2.get_prim(), beyazyaka3.get_prim()],
             "yenimaas": [calisan1.yenimaas(), calisan2.yenimaas(), calisan3.yenimaas(), maviyaka1.yenimaas(), maviyaka2.yenimaas(), maviyaka3.yenimaas(), beyazyaka1.yenimaas(), beyazyaka2.yenimaas(), beyazyaka3.yenimaas()]}
 
-    df = pd.DataFrame(data, columns=["Nesne", "tc_no", "ad", "soyad", "yas", "cinsiyet", "uyruk", "sektor", "tecrube", "maas", "yipranma", "prim", "yenimaas"])
-    print(df)
+    df = pd.DataFrame(data, columns=["tip", "tc_no", "ad", "soyad", "yas", "cinsiyet", "uyruk", "sektor", "tecrube", "maas", "yipranma", "prim", "yenimaas"])
+    print(df.groupby("tip").agg(tecrubeOrtalama = pd.NamedAgg(column='tecrube', aggfunc='mean'), yenimaasOrtalama = pd.NamedAgg(column='yenimaas', aggfunc='mean')))
+
 
 if __name__ == "__main__": main()  
