@@ -192,5 +192,22 @@ def main():
             break
         else:
             print("Geçerli bir seçim yapınız.")
+    data = {"tip": list(), "tcno": list(), "ad": list(), "soyad": list(), "yas": list(), "cinsiyet": list(), "uyruk": list(), "sektor": list(), "tecrube": list(), "maas": list(), "prim": list(), "yipranma": list(), "yenimaas": list()}
+            
+    # for kayit in kayitlar:
+    #     data["tip"].append({Insan: "İnsan", Issiz: "İşsiz", Calisan: "Çalışan", BeyazYaka: "Beyaz Yaka", MaviYaka: "Mavi Yaka"}[type(kayit)])
+    #     data["tcno"].append(kayit.get_tc_no())
+    #     data["ad"].append(kayit.get_ad())
+    #     data["soyad"].append(kayit.get_soyad())
+    #     data["yas"].append(kayit.get_yas())
+    #     data["cinsiyet"].append(kayit.get_cinsiyet())
+    #     data["uyruk"].append(kayit.get_uyruk())
+    #     data["sektor"].append(kayit.sektor_al())
+    #     data["tecrube"].append(kayit.tecrube_al())
+    #     data["maas"].append(kayit.maas_al())
+    #     data["prim"].append(kayit.prim)
+    #     data["yipranma"].append(kayit.yipranma)
+    #     data["yenimaas"].append(kayit.yenimaas)
+
 
 if __name__ == "__main__": main()  
