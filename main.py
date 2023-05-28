@@ -5,20 +5,22 @@ from MaviYaka import MaviYaka
 from BeyazYaka import BeyazYaka
 import pandas as pd
 
-def main():
-    
+def main(): #Ana fonksiyon
+    #insan1 ve insan2 nesnelerini oluşturur ve ekrana yazdırır
     insan1 = Insan("10001", "Ali", "Yılmaz", 25, "Erkek", "Türk")
     insan2 = Insan("10002", "Veli", "Yılmaz", 31, "Erkek", "Türk")
     print(insan1)
     print(insan2)
 
+    #issiz1, issiz2 ve issiz3 nesnelerini oluşturur ve ekrana yazdırır
     issiz1 = Issiz("10003", "Ayşe", "Aras", 28, "Kadın", "Türk", 6, 1, 0)
     issiz2 = Issiz("10004", "Selim", "Duran", 39, "Erkek", "Türk", 7, 4, 4)
     issiz3 = Issiz("10005", "Mehmet", "Diren", 25, "Erkek", "Türk", 3, 2, 2)
     print(issiz1)
     print(issiz2)
     print(issiz3)
-
+    
+    #calisan1, calisan2 ve calisan3 nesnelerini oluşturur ve ekrana yazdırır
     calisan1 = Calisan("10006", "Arda", "Dağ", 21, "Erkek", "Türk", "Teknoloji", 12, 9000)
     calisan2 = Calisan("10007", "Sevda", "Mari", 29, "Kadın", "Türk", "Diğer", 29, 14000)
     calisan3 = Calisan("10008", "Derin", "Üreten", 44, "Kadın", "Türk", "Muhasebe", 51, 22000)
@@ -26,6 +28,7 @@ def main():
     print(calisan2)
     print(calisan3)
 
+    #maviyaka1, maviyaka2 ve maviyaka3 nesnelerini oluşturur ve ekrana yazdırır
     maviyaka1 = MaviYaka("10009", "Durmuş", "Deniz", 25, "Erkek", "Türk", "Teknoloji", 5, 10000, 0.79)
     maviyaka2 = MaviYaka("10010", "Fasıl", "Kuru", 19, "Erkek", "Türk", "İnşaat", 11, 9000, 0.21)
     maviyaka3 = MaviYaka("10011", "Gülbahar", "Tandoğan", 34, "Kadın", "Türk", "Diğer", 60, 29000, 0.54)
@@ -33,6 +36,7 @@ def main():
     print(maviyaka2)
     print(maviyaka3)
 
+    #beyazyaka1, beyazyaka2 ve beyazyaka3 nesnelerini oluşturur ve ekrana yazdırır
     beyazyaka1 = BeyazYaka("10012", "Güney", "Saygı", 21, "Erkek", "Türk", "Teknoloji", 13, 11000, 250)
     beyazyaka2 = BeyazYaka("10013", "Volkan", "Karahan", 33, "Erkek", "Türk", "İnşaat", 21, 13000, 1200)
     beyazyaka3 = BeyazYaka("10014", "Jale", "Türkmen", 37, "Kadın", "Türk", "Diğer", 40, 29000, 3650)
@@ -40,6 +44,7 @@ def main():
     print(beyazyaka2)
     print(beyazyaka3)
 
+    #pandas kütüphanesini kullanarak verileri bir tablo haline getirmek için bir sözlük oluşturulur
     data = {"tip": ["Çalışan", "Çalışan", "Çalışan", "Mavi Yaka", "Mavi Yaka", "Mavi Yaka", "Beyaz Yaka", "Beyaz Yaka", "Beyaz Yaka"],
             "tc_no": [calisan1.get_tc_no(), calisan2.get_tc_no(), calisan3.get_tc_no(), maviyaka1.get_tc_no(), maviyaka2.get_tc_no(), maviyaka3.get_tc_no(), beyazyaka1.get_tc_no(), beyazyaka2.get_tc_no(), beyazyaka3.get_tc_no()],
             "ad": [calisan1.get_ad(), calisan2.get_ad(), calisan3.get_ad(), maviyaka1.get_ad(), maviyaka2.get_ad(), maviyaka3.get_ad(), beyazyaka1.get_ad(), beyazyaka2.get_ad(), beyazyaka3.get_ad()],
@@ -54,7 +59,9 @@ def main():
             "prim": [0, 0, 0, 0, 0, 0, beyazyaka1.get_prim(), beyazyaka2.get_prim(), beyazyaka3.get_prim()],
             "yenimaas": [calisan1.yenimaas(), calisan2.yenimaas(), calisan3.yenimaas(), maviyaka1.yenimaas(), maviyaka2.yenimaas(), maviyaka3.yenimaas(), beyazyaka1.yenimaas(), beyazyaka2.yenimaas(), beyazyaka3.yenimaas()]}
 
+    #oluşturulan sözlük pandas kütüphanesinin DataFrame fonksiyonu ile tablo haline getirilir
     df = pd.DataFrame(data, columns=["tip", "tc_no", "ad", "soyad", "yas", "cinsiyet", "uyruk", "sektor", "tecrube", "maas", "yipranma", "prim", "yenimaas"])
+    
     print("\nÇalışan türlerinin tecrübe ve yeni maaş ortalamaları:\n", df.groupby("tip").agg(tecrubeOrtalama = pd.NamedAgg(column='tecrube', aggfunc='mean'), yenimaasOrtalama = pd.NamedAgg(column='yenimaas', aggfunc='mean')))
 
     print("\nMaaşı 15000 TL üzerinde olan kişi sayısı:", df[df.maas > 15000].count()["maas"])
@@ -65,7 +72,8 @@ def main():
 
     print("\nYeni maaşı 10000 TL üzerinde olanlar:\n", df[df.yenimaas > 10000].iloc[1:4, [1, 12]]) # 2 ve 5 dahil
 
+    #var olan tablodan ad, soyad, sektor ve yenimaas sütunlarından yeni bir tablo oluşturulur
     df2 = df[["ad", "soyad", "sektor", "yenimaas"]]
     print("\nYeni Liste:\n", df2)
  
-if __name__ == "__main__": main()  
+if __name__ == "__main__": main() 
